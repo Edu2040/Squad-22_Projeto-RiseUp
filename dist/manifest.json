@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "JetExtension",
+  "version": "1.0",
+  "description": "Extensão desenvolvida para JetSales.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "JetExtension",
+    "default_icon": "logojt.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://crm.rdstation.com/*",
+    "https://chat.jetsalesbrasil.com/*"
+  ],
+  "icons": {
+    "16": "logojt.png",
+    "48": "logojt.png",
+    "128": "logojt.png"
+  },
+  "permissions": [
+    "sidePanel",
+    "tabs",
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "side_panel": {
+    "default_path": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
